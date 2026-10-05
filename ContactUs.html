@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CssPage.css">
+    <style>
+        /* Gloabal */
+ 
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(23, 23, 23);
+}
+/*  */
+
+.containerHeader{
+    width: 100%;
+    height: 15vh;
+    min-height: fit-content;
+
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-between;
+
+    padding: 0 , 2vh;
+
+    background-color: black;
+    padding: 1%;
+}  
+                /* HEIGHT FOR HEADER 15vh */
+#imgLogo{
+    height: 80%;
+    width: auto;
+    object-fit: contain;/* It makes sure the img fits in the container*/
+    flex-shrink: 0;
+
+    margin-left: 10%;
+    
+}
+
+#PageLinks{
+    display: flex;
+    align-items: center;
+
+    font-size: medium;
+
+    gap: 1.875em;
+    padding-right: 10%;
+
+    flex-wrap: wrap;
+}
+
+#PageLinks a{
+    position: relative;
+    text-decoration: none;
+    color: gold;
+}
+
+#PageLinks a:hover{
+    color: goldenrod;
+}
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="containerHeader">
+            <img src="Img/Logo.PNG" alt="Error 404 Image not found" id="imgLogo">
+        
+            <nav id="PageLinks">
+                <a href="Services.html">Services</a>
+                <a href="Inventory.html">View Inventory</a>
+                <a href="MatricDance.html">Matric Dance</a>
+                <a href="ContactUs.html"style="text-decoration: underline">Contact us</a>
+                <a href="AboutUs.html">About us</a>
+                <a href="Home.html">Home Page</a>
+            </nav>
+            <button id="themeToggle" class="theme-toggle" type="button">☾ Dark Mode</button>
+
+            <!-- Header end -->     
+        </div>
+    </header>
+    <section class="contact-hero">
+
+        <h1>Contact Us</h1>
+
+        <p>
+            We would love to hear from you
+        </p>
+
+    </section>
+
+
+    
+    <section class="contact-container">
+        <div class="contact-info">
+            <h2>Get In Touch</h2>
+            <p>
+                Have a question about one of our vehicles or services?
+                Contact Mshalom Car Dealership and our team will be happy
+                to assist you.
+            </p>
+
+            <div class="info-box">
+                <h3> Address</h3>
+                <p>
+                    407 Eton Avenue, Ferndale<br>
+                    Randburg<br>
+                    Gauteng, South Africa
+                </p>
+            </div>
+
+            <div class="info-box">
+                <h3> Phone</h3>
+                <p>
+                    +27 60 075 2541
+                </p>
+            </div>
+
+            <div class="info-box">
+                <h3>Email</h3>
+                <p>
+                    info@mshalomcars.co.za
+                </p>
+            </div>
+
+            <div class="info-box">
+                <h3> Business Hours</h3>
+                <p>
+                    Monday - Friday: 08:00 - 17:30<br>
+                    Saturday: 08:00 - 15:00<br>
+                    Sunday: Closed
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- CONTACT FORM -->
+        <div class="contact-form">
+
+            <h2>Send Us A Message</h2>
+
+            <form action="#" method="post">
+
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        placeholder="Enter your phone number">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="vehicle">Vehicle of Interest</label>
+
+                    <input
+                        type="text"
+                        id="vehicle"
+                        name="vehicle"
+                        placeholder="Vehicle you are enquiring about">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="What can we help you with?"
+                        required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Write your message here..."
+                        required></textarea>
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+   <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>&copy; 2026 M Shalom Car Dealership. All rights reserved.</p>
+  </footer>
+    
+    <script>
+        const vehicleInput = document.getElementById("vehicle");
+        const subjectInput = document.getElementById("subject");
+        const params = new URLSearchParams(window.location.search);
+        const vehicle = params.get("vehicle");
+
+        if (vehicle && vehicleInput && subjectInput) {
+            const decodedVehicle = vehicle.trim();
+            vehicleInput.value = decodedVehicle;
+            subjectInput.value = `Enquiry about ${decodedVehicle}`;
+        }
+    </script>
+    <script src="theme.js"></script>
+</body>
+</html>

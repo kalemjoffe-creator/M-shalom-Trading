@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CssPage.css">
+    <style>
+        /* Gloabal */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: rgb(23, 23, 23);
+}
+/*  */
+
+.containerHeader{
+    width: 100%;
+    height: 15vh;
+    min-height: fit-content;
+
+    display: flex;
+    align-items: center;
+    
+    justify-content: space-between;
+
+    padding: 0 , 2vh;
+
+    background-color: black;
+    padding: 1%;
+}  
+                /* HEIGHT FOR HEADER 15vh */
+#imgLogo{
+    height: 80%;
+    width: auto;
+    object-fit: contain;/* It makes sure the img fits in the container*/
+    flex-shrink: 0;
+
+    margin-left: 10%;
+    
+}
+
+#PageLinks{
+    display: flex;
+    align-items: center;
+
+    font-size: medium;
+
+    gap: 1.875em;
+    padding-right: 10%;
+
+    flex-wrap: wrap;
+}
+
+#PageLinks a{
+    position: relative;
+    text-decoration: none;
+    color: gold;
+}
+
+#PageLinks a:hover{
+    color: goldenrod;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="containerHeader">
+            <img src="Img/logo.PNG" alt="Error 404 Image not found" id="imgLogo">
+        
+            <nav id="PageLinks">
+                <a href="Services.html">Services</a>
+                <a href="Inventory.html">View Inventory</a>
+                <a href="MatricDance.html">Matric Dance</a>
+                <a href="ContactUs.html">Contact us</a>
+                <a href="AboutUs.html"style="text-decoration: underline">About us</a>
+                <a href="Home.html">Home Page</a>
+            </nav>
+            <button id="themeToggle" class="theme-toggle" type="button">☾ Dark Mode</button>
+
+            <!-- Header end -->     
+        </div>
+    </header>
+    <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h1>Where metal meets art</h1>
+    <p class="tagline">The story behind the shine</p>
+  </section>
+
+  <!-- ===== ABOUT CONTENT ===== -->
+  <main class="about-content">
+
+    <section class="about-block">
+      <h2>Our Story</h2>
+      <p>
+        M Shalom Car Dealership started with a simple idea: every vehicle deserves to
+        look as good as it drives. What began as a small passion project has grown
+        into a full car dealership and detailing service trusted by drivers who
+        care about their cars as much as we do.
+      </p>
+    </section>
+
+    <section class="about-block reverse">
+      <h2>What We Do</h2>
+      <p>
+        We buy, sell, and restore vehicles to showroom condition. From everyday
+        hatchbacks to high performance machines, our team treats every car with
+        the same level of craftsmanship because in our shop, metal really
+        does meet art.
+      </p>
+    </section>
+
+    <section class="values">
+      <h2>Why Choose Us</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <h3>Quality First</h3>
+          <p>Every vehicle is inspected and finished to the highest standard before it leaves our hands.</p>
+        </div>
+        <div class="value-card">
+          <h3>Honest Service</h3>
+          <p>No hidden costs, no shortcuts. Just straightforward advice you can trust.</p>
+        </div>
+        <div class="value-card">
+          <h3>Passion for Cars</h3>
+          <p>We're car people first. That passion shows in the care we put into every job.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <h2>Ready to find your next car?</h2>
+      <a href="inventory.html" class="cta-button">View our inventory</a>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>&copy; 2026 M Shalom Car Dealership. All rights reserved.</p>
+  </footer>
+
+    <script src="theme.js"></script>
+</body>
+</html>
