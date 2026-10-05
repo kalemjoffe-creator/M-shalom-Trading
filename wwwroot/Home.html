@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CssPage.css">
+</head>
+<body>
+    <header>
+        <div class="containerHeader">
+            <img src="Img/logo.PNG" alt="Error 404 Image not found" id="imgLogo">
+        
+            <nav id="PageLinks">
+                <a href="Services.html">Services</a>
+                <a href="Inventory.html">View Inventory</a>
+                <a href="MatricDance.html">Matric Dance</a>
+                <a href="ContactUs.html">Contact us</a>
+                <a href="AboutUs.html">About us</a>
+                <a href="Home.html"style="text-decoration: underline">Home Page</a>
+            </nav>
+            <button id="themeToggle" class="theme-toggle" type="button">☾ Dark Mode</button>
+
+            <!-- Header end -->     
+        </div>
+    </header>
+     <!-- Image of car with words inside -->
+    <section class="backroundImg"></section>   
+       
+    <!-- Who we are -->
+    <section id="Content"> 
+        <h1>Where you meet the right car</h1>
+        <h2>We have the perfect vehicle for you </h2>
+
+        <!-- Par -->
+        <p>
+            Browse our premium selection of vehicles with unbeatable prices
+        </p>
+    <!--  -->
+    </section>
+
+    
+
+    <section id="portfolioContainer">
+        <a href="Inventory.html">
+        <button id="portfolio">
+            View our inventory
+        </button>
+        </a>
+    </section>
+
+     <!-- Featured inventory slideshow -->
+    <section class="home-slideshow" aria-label="Featured vehicles from our inventory">
+        <a class="slide active" href="Inventory.html#vehicle-audi" aria-label="View 2013 Audi Q7 in inventory">
+            <img src="Img/Cars/2013-Audi-Q7-42-TDI-V8-quattro-Auto.avif" alt="2013 Audi Q7">
+            <span class="slide-caption"><strong>2013 Audi Q7</strong><small>View in inventory</small></span>
+        </a>
+        <a class="slide" href="Inventory.html#vehicle-range-rover" aria-label="View Land Rover Range Rover in inventory">
+            <img src="Img/Cars/2007-Land-Rover-Range-Rover-42-V8-SC.avif" alt="2007 Land Rover Range Rover">
+            <span class="slide-caption"><strong>2007 Land Rover Range Rover</strong><small>View in inventory</small></span>
+        </a>
+        <a class="slide" href="Inventory.html#vehicle-porsche" aria-label="View 2017 Porsche Cayenne in inventory">
+            <img src="Img/Cars/2017-Porsche-Cayenne-GTS-Auto.avif" alt="2017 Porsche Cayenne">
+            <span class="slide-caption"><strong>2017 Porsche Cayenne</strong><small>View in inventory</small></span>
+        </a>
+        <a class="slide" href="Inventory.html#vehicle-maserati" aria-label="View 2018 Maserati Quattroporte in inventory">
+            <img src="Img/Cars/2018-Maserati-Quattroporte-Diesel.avif" alt="2018 Maserati Quattroporte">
+            <span class="slide-caption"><strong>2018 Maserati Quattroporte</strong><small>View in inventory</small></span>
+        </a>
+
+        <button class="slide-btn prev" type="button" aria-label="Previous vehicle">&#10094;</button>
+        <button class="slide-btn next" type="button" aria-label="Next vehicle">&#10095;</button>
+
+        <div class="slide-dots" aria-label="Choose featured vehicle">
+            <button class="dot active" type="button" aria-label="Slide 1"></button>
+            <button class="dot" type="button" aria-label="Slide 2"></button>
+            <button class="dot" type="button" aria-label="Slide 3"></button>
+            <button class="dot" type="button" aria-label="Slide 4"></button>
+        </div>
+    </section>
+    <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <p>&copy; 2026 M Shalom Car Dealership. All rights reserved.</p>
+  </footer>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            currentSlide = (index + slides.length) % slides.length;
+
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === currentSlide);
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentSlide);
+            });
+        }
+
+        document.querySelector('.next').addEventListener('click', () => {
+            showSlide(currentSlide + 1);
+        });
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            showSlide(currentSlide - 1);
+        });
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => showSlide(i));
+        });
+
+        setInterval(() => showSlide(currentSlide + 1), 5000);
+    </script>
+    <script src="theme.js"></script>
+</body>
+</html>
