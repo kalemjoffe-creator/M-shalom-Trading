@@ -1,0 +1,6 @@
+@MShalomWebsite_HostAddress = http://localhost:5011
+
+GET {{MShalomWebsite_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
